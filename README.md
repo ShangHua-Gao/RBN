@@ -39,4 +39,4 @@ If you find this work or code is helpful in your research, please cite:
 }
 ```
 ## Contact
-If you have any questions, feel free to E-mail Shang-Hua Gao (`shgao(at)live.com`) and Qi Han(`qi`).
+If you have any questions, feel free to E-mail Shang-Hua Gao (`shgao(at)live.com`) and Qi Han(`hqer(at)foxmail.com`).
