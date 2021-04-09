@@ -1,9 +1,10 @@
 # Representative Batch Normalization (RBN) with Feature Calibration
-The official implemention of the CVPR2021 oral paper: Representative Batch Normalization with Feature Calibration
+The official implementation of the CVPR2021 oral paper: Representative Batch Normalization with Feature Calibration
 
 **You only need to replace the BN with our RBN without any other adjustment.**
 
 ## Update
+- 2021.4.9 The Jittor implementation is available now in `Jittor`.
 - 2021.4.1 The training code of ImageNet classification using RBN is released.
 
 ## Introduction

@@ -1,4 +1,4 @@
-# Jittor Implemention of Representative Batch Normalization (RBN)
+# Jittor Implementation of Representative Batch Normalization (RBN)
 
 
 ## Introduction
