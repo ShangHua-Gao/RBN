@@ -39,5 +39,9 @@ If you find this work or code is helpful in your research, please cite:
   year={2021}
 }
 ```
+## License
+
+The source code is free for research and education use only. Any comercial use should get formal permission first.
+
 ## Contact
 If you have any questions, feel free to E-mail Shang-Hua Gao (`shgao(at)live.com`) and Qi Han(`hqer(at)foxmail.com`).
