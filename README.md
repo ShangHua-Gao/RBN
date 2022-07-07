@@ -4,6 +4,7 @@ The official implementation of the CVPR2021 oral paper: Representative Batch Nor
 **You only need to replace the BN with our RBN without any other adjustment.**
 
 ## Update
+- 2022.7.7 RBN is verified useful for multimodal learning.
 - 2021.4.9 The Jittor implementation is available now in `Jittor`.
 - 2021.4.1 The training code of ImageNet classification using RBN is released.
 
