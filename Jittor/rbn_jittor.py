@@ -17,19 +17,19 @@ class RepresentativeBatchNorm2d(nn.BatchNorm2d):
         self.running_mean = init.constant((num_features,), "float32", 0.0).stop_grad()
         self.running_var = init.constant((num_features,), "float32", 1.0).stop_grad()
 
-        ### weights for centering calibration ###        $
+        ### weights for centering calibration ###        
         self.center_weight = init.constant((1, num_features, 1, 1), "float32", 0.0)
-        ### weights for scaling calibration ###            $
-        self.scale_weight = init.constant((1, num_features, 1, 1), "float32", 1.0)
-        self.scale_bias = init.constant((1, num_features, 1, 1), "float32", 0.0)
+        ### weights for scaling calibration ###           
+        self.scale_weight = init.constant((1, num_features, 1, 1), "float32", 0.0)
+        self.scale_bias = init.constant((1, num_features, 1, 1), "float32", 1.0)
         ### calculate statistics ###$
         self.stas = nn.AdaptiveAvgPool2d((1,1))
 
     def execute(self, x):
         dims = [0]+list(range(2,x.ndim))
-        ####### centering calibration begin ####### $
+        ####### centering calibration begin #######
         x += self.center_weight*self.stas(x)
-        ####### centering calibration end ####### $
+        ####### centering calibration end #######
         if self.is_train:
             xmean = jt.mean(x, dims=dims)
             x2mean = jt.mean(x*x, dims=dims)
@@ -52,8 +52,8 @@ class RepresentativeBatchNorm2d(nn.BatchNorm2d):
             b = - self.running_mean * w
             norm_x = x * w.broadcast(x, dims) + b.broadcast(x, dims)
         
-        ####### scaling calibration begin ####### $
+        ####### scaling calibration begin ####### 
         scale_factor = jt.sigmoid(self.scale_weight*self.stas(norm_x)+self.scale_bias)
-        ####### scaling calibration end ####### $
+        ####### scaling calibration end ####### 
         return self.weight*scale_factor*norm_x  + self.bias
 
